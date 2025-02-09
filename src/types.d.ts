@@ -17,3 +17,11 @@ declare const BUILD_OPTIONS: {
 };
 
 type Point = [number, number];
+
+type SupportedLanguages = 'en';
+
+type TranslationKeys = 'pressAnyButton';
+
+type TranslationProps = Record<string, number | boolean | string>;
+
+type TranslationDictionary = Record<TranslationKeys, string>;

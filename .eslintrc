@@ -108,6 +108,7 @@
                 "null": "ignore"
             }
         ],
+        "no-console": 0,
         "no-else-return": [
             "error",
             {
@@ -124,7 +125,6 @@
                 ]
             }
         ],
-        "no-console": "error",
         "prettier/prettier": [
             "error",
             {

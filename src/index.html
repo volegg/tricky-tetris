@@ -31,7 +31,8 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, minimal-ui, viewport-fit=cover">
     <style>
-        body {
+        body,
+        #splashscreen {
             font-family: 'Trebuchet MS';
             display: flex;
             justify-content: center;
@@ -42,12 +43,36 @@
             height: 100vh;
             background: #1d1d1d;
             justify-content: center;
-            overflow: hidden;
+            color: #fff;
+        }
+
+        #splashscreen {
+            position: fixed;
+            flex-direction: column;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 
 <body translate="no" class="notranslate">
+    <div id="splashscreen">
+        <span style="font-size: 3em">
+            <b>
+                <%= htmlWebpackPlugin.options.templateParameters.title %>
+            </b>
+        </span>
+        <img src="./favicon512.png" style="max-width: min(85%, 50vh)" />
+        <p id="text">Loading...</p>
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 export function initLogger() {
     console.log(
         '%c' + BUILD_OPTIONS.version.banner,

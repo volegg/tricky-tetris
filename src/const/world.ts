@@ -1,4 +1,4 @@
-export const enum World {
-    width = 375,
-    height = 667,
+export const enum WorldPortrair {
+    width = 750,
+    height = 1334,
 }
