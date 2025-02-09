@@ -148,7 +148,7 @@ module.exports = {
             "node_modules"
         ],
         extensions: [
-            ".json", ".ts", ".tsx"
+            ".js", ".jsx", ".json", ".ts", ".tsx"
         ],
         alias: {
             assets: paths.assets(),

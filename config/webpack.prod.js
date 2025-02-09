@@ -5,7 +5,7 @@ const {merge} = require("webpack-merge");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const imageminWebp = require("imagemin-webp");
 
-const paths = require("./paths");
+const paths = require("./paths.js");
 const config = require("./webpack.common.js");
 
 module.exports = merge(config, {

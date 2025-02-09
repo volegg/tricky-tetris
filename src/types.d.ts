@@ -15,3 +15,5 @@ declare const BUILD_OPTIONS: {
         build: number;
     };
 };
+
+type Point = [number, number];
