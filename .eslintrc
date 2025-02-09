@@ -1,0 +1,135 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-import",
+        "prettier",
+        "simple-import-sort"
+    ],
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "project": [
+            "tsconfig.json"
+        ],
+        "ecmaVersion": "2020",
+        "sourceType": "module",
+        "extraFileExtensions": [
+            ".skip"
+        ]
+    },
+    "rules": {
+        "simple-import-sort/imports": [
+            "error",
+            {
+                "groups": [
+                    [
+                        // pixi
+                        "^pixi",
+                        // @pixi
+                        "^@pixi",
+                        // @*
+                        "^@\\w",
+                        // all the rest
+                        "^\\w"
+                    ],
+                    [ // from src
+                        "^src\\/.*"
+                    ],
+                    [
+                        // ../
+                        "^\\.\\.(?!/?$)",
+                        "^\\.\\./?$"
+                    ],
+                    [
+                        // ./
+                        "^\\./(?=.*/)(?!/?$)",
+                        "^\\.(?!/?$)",
+                        "^\\./?$"
+                    ]
+                ]
+            }
+        ],
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "default",
+                "format": [
+                    "camelCase",
+                    "UPPER_CASE"
+                ]
+            },
+            {
+                "selector": "typeLike",
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": "interface",
+                "format": [
+                    "PascalCase"
+                ],
+                "custom": {
+                    "regex": "^I[A-Z0-9]",
+                    "match": false
+                }
+            }
+        ],
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-implied-eval": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": true
+            }
+        ],
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": [
+            "error",
+            {
+                "builtinGlobals": false,
+                "hoist": "functions",
+                "allow": []
+            }
+        ],
+        "eqeqeq": [
+            "error",
+            "always",
+            {
+                "null": "ignore"
+            }
+        ],
+        "no-else-return": [
+            "error",
+            {
+                "allowElseIf": false
+            }
+        ],
+        "no-empty-function": [
+            "error",
+            {
+                "allow": [
+                    "arrowFunctions",
+                    "functions",
+                    "methods"
+                ]
+            }
+        ],
+        "no-console": "error",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "lf"
+            }
+        ]
+    }
+}

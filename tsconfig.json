@@ -1,0 +1,45 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "module": "CommonJS",
+        "target": "es5",
+        "lib": [
+            "es5",
+            "es6",
+            "es7"
+        ],
+        "removeComments": false,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": false,
+        "resolveJsonModule": true,
+        "downlevelIteration": true,
+        "checkJs": false,
+        "declaration": false,
+        "emitDecoratorMetadata": false,
+        "forceConsistentCasingInFileNames": true,
+        "keyofStringsOnly": false,
+        "newLine": "LF",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "pretty": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "suppressExcessPropertyErrors": false,
+        "suppressImplicitAnyIndexErrors": false,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "baseUrl": "./src",
+        "outDir": "./build"
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "buid",
+        "dist",
+        "node_modules"
+    ]
+}

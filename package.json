@@ -1,0 +1,82 @@
+{
+    "name": "tricky-tetris",
+    "version": "0.0.1",
+    "description": "Tricky Tetris",
+    "private": true,
+    "author": "olegg.net@gmail.com",
+    "license": "MIT",
+    "engines": {
+        "node": "20.x",
+        "npm": "10.x"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "scripts": {
+        "lint": "eslint './**/*.ts'",
+        "lint:diff": "eslint $(git diff --name-only --diff-filter=d --relative HEAD -- './**/*.ts' | xargs)",
+        "start": "cross-env NODE_ENV=development webpack serve --config scripts/webpack.start.js",
+        "build:dev": "cross-env NODE_ENV=development webpack --config scripts/webpack.dev.js",
+        "build:prod": "cross-env NODE_ENV=production webpack --config scripts/webpack.prod.js",
+        "build:analyze": "cross-env NODE_ENV=production webpack --config scripts/webpack.analyze.js",
+        "deploy": "sh deploy/deploy.sh",
+        "prepare": "husky install",
+        "type-check": "tsc --noEmit --project tsconfig.json",
+        "pre-commit": "npm run lint:diff -- --fix --max-warnings 0",
+        "pre-push": "npm run type-check"
+    },
+    "dependencies": {
+        "@pixi/particle-emitter": "^5.0.8",
+        "core-js": "3.26.0",
+        "eventemitter3": "^5.0.1",
+        "pixi.js": "7.4.2"
+    },
+    "devDependencies": {
+        "@types/eventemitter3": "^2.0.2",
+        "@types/node": "18.11.7",
+        "@types/webpack": "5.28.2",
+        "@types/webpack-dev-server": "3.11.6",
+        "@typescript-eslint/eslint-plugin": "6.7.0",
+        "@typescript-eslint/parser": "6.7.0",
+        "browserslist": "4.21.4",
+        "clean-webpack-plugin": "*",
+        "copy-webpack-plugin": "9.0.0",
+        "cross-env": "7.0.3",
+        "eslint": "8.22.0",
+        "eslint-config-prettier": "8.10.0",
+        "eslint-plugin-import": "2.28.1",
+        "eslint-plugin-prettier": "4.2.1",
+        "eslint-plugin-simple-import-sort": "10.0.0",
+        "eslint-webpack-plugin": "3.2.0",
+        "file-loader": "6.2.0",
+        "fork-ts-checker-webpack-plugin": "6.5.3",
+        "html-webpack-plugin": "5.5.3",
+        "husky": "8.0.0",
+        "identity-obj-proxy": "3.0.0",
+        "imagemin-webp": "6.1.0",
+        "imagemin-webpack-plugin": "2.4.2",
+        "npm-run-all": "4.1.5",
+        "prettier": "2.8.8",
+        "pretty-quick": "3.1.3",
+        "regenerator-runtime": "0.13.10",
+        "rimraf": "3.0.2",
+        "terser-webpack-plugin": "5.1.3",
+        "ts-loader": "9.4.4",
+        "ts-node": "10.9.1",
+        "typescript": "5.1.6",
+        "webpack": "5.90.1",
+        "webpack-bundle-analyzer": "4.10.1",
+        "webpack-cli": "5.1.4",
+        "webpack-dev-server": "4.15.1",
+        "webpack-merge": "5.9.0"
+    }
+}
