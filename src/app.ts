@@ -4,7 +4,7 @@ export function createApp([width, height]: Point) {
     return new Application({
         width,
         height,
-        background: '#1D1D1D',
+        backgroundAlpha: 0,
         clearBeforeRender: false,
         autoDensity: true,
         antialias: true,
